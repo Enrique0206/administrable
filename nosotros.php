@@ -1,3 +1,10 @@
+<?php
+require_once './autoload.php';
+
+$lista = DescripcionesDAO::listar();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,19 +21,20 @@
 			
 			<h3 class="text-center">Cursos</h3>
 			
-			
-			<div class="container">
+			<?php foreach($lista as $descripcion) { ?>
+			<div class="container">				
 				<div class="row center-block">
-					<div class="col-xs-12 col-md-6">
-						<a href="#"><img src="images/jpg/guitarra.jpg" class="img-responsive" style="width: 50%" alt="1920 x 1280"></a>
+					<div class="col-xs-12 col-md-6">						
+						<?=$descripcion->imagen?>
 					</div>
 					<div class="col-xs-6 col-md-6 text-justify">
-						<h3>TITULO</h3>
-						<p>reseña historica</p>
+						<h3><?=$descripcion->titulo?></h3>
+						<p><?=$descripcion->descripcion?></p>
 					</div>
-				</div>			
+				</div>					
 			</div>
-		
+			<?php } ?>
+			
 		</div>
 		
 		
