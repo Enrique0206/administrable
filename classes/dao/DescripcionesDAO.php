@@ -40,4 +40,24 @@ class DescripcionesDAO {
 		
 		}	
 		
+		public static function obtener($id){
+		
+		$con = Conexion::getConexion();
+		
+		  $sql = "select id, titulo,descripcion, imagen, imagen_tipo, imagen_tamanio from nosotros
+				  where id = :id";
+				
+		$stmt = $con->prepare($sql);
+		
+		$stmt->bindParam(':id', $id);
+		
+		$stmt->execute();
+		
+		if($registro = $stmt->fetchObject('Descripcion')){
+			return $registro;
+			}
+		
+		
+		}
+		
 }

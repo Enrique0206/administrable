@@ -16,6 +16,7 @@ $lista = DescripcionesDAO::listar();
 		
 		<?php include './includes/header.php'; ?>
 		
+		<div class="container-fluid"><?= Flash::show() ?></div>
 		
 		<div class="container">
 			
@@ -25,7 +26,8 @@ $lista = DescripcionesDAO::listar();
 			<div class="container">				
 				<div class="row center-block">
 					<div class="col-xs-12 col-md-6">						
-						<?=$descripcion->imagen?>
+						<!--<?=$descripcion->imagen?>-->
+						<img src="descripcion_imagen.php?id=<?=$descripcion->id?>" height="200px">
 					</div>
 					<div class="col-xs-6 col-md-6 text-justify">
 						<h3><?=$descripcion->titulo?></h3>
