@@ -9,6 +9,10 @@ require_once ("../dto/Descripcion.php");
 //var_dump($lista);
 
 
-$descripcion = DescripcionesDAO::obtener(1);
+/*$descripcion = DescripcionesDAO::obtener(1);
 
-var_dump($descripcion);
+var_dump($descripcion);*/
+
+
+
+		

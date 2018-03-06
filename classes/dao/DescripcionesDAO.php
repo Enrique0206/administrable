@@ -20,6 +20,7 @@ class DescripcionesDAO {
 			return $lista;		
 		}	
 		
+		
 		public static function registrar($descripcion){
 		
 		$con = Conexion::getConexion();
@@ -36,9 +37,9 @@ class DescripcionesDAO {
 		$stmt->bindParam(':imagen_tipo', $descripcion->imagen_tipo);
 		$stmt->bindParam(':imagen_tamanio', $descripcion->imagen_tamanio);
 		
-		$stmt->execute();
-		
+		$stmt->execute();		
 		}	
+		
 		
 		public static function obtener($id){
 		
@@ -55,9 +56,20 @@ class DescripcionesDAO {
 		
 		if($registro = $stmt->fetchObject('Descripcion')){
 			return $registro;
-			}
-		
-		
+			}	
 		}
+		
+		
+		public static function eliminar($id){
+		
+		$con = Conexion::getConexion();
+		
+		$sql = "delete from nosotros where id = :id";
+		
+		$stmt = $con->prepare($sql);
+		$stmt->bindParam(':id', $id);
+		$stmt->execute();		
+		}
+		
 		
 }

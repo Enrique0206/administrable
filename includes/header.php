@@ -21,7 +21,7 @@
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMINISTRAR<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
 							<li><a href="#">administrar home</a></li>
-							<li><a href="registrar_nosotros.php">administrar nosotros</a></li>
+							<li><a href="admin_nos.php">administrar nosotros</a></li>
 							<li><a href="#">Administrar servicios</a></li>							
 						  </ul>
 						</li>
